@@ -15,6 +15,7 @@ app.mount("/public", StaticFiles(directory="public"), name="public")
 
 templates = Jinja2Templates(directory="templates")
 
+
 # Initialize database and create models
 @app.on_event("startup")
 def init_database():
