@@ -11,8 +11,6 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;500;700&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('public', path='css/styles.css') }}" rel="stylesheet" />
@@ -31,10 +29,12 @@
                     <!-- To make this form functional, sign up at-->
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN" action="/webapp" method="POST">
                         <!-- Email address input-->
                         <div class="row input-group-newsletter">
-                            <div class="col-auto"><button class="btn btn-primary" id="submitButton" type="submit">WebApp</button></div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary" id="submitButton" type="submit">WebApp</button>
+                            </div>
                         </div>
                     </form>
                 </div>

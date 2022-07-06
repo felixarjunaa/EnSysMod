@@ -18,7 +18,7 @@ def all_energy_conversions(db: Session = Depends(deps.get_db),
     """
     Retrieve all energy conversions.
     """
-    return crud.energy_conversion.get_multi(db, skip, limit)
+    return crud.energy_conversion.get_multi(db, skip=skip, limit=limit)
 
 
 @router.post("/", response_model=schemas.EnergyConversion,

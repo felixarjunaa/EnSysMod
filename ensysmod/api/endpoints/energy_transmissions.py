@@ -18,7 +18,7 @@ def all_energy_transmissions(db: Session = Depends(deps.get_db),
     """
     Retrieve all energy transmissions.
     """
-    return crud.energy_transmission.get_multi(db, skip, limit)
+    return crud.energy_transmission.get_multi(db, skip=skip, limit=limit)
 
 
 @router.post("/", response_model=schemas.EnergyTransmission,

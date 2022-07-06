@@ -18,7 +18,7 @@ def all_energy_sources(db: Session = Depends(deps.get_db),
     """
     Retrieve all energy sources.
     """
-    return crud.energy_source.get_multi(db, skip, limit)
+    return crud.energy_source.get_multi(db, skip=skip, limit=limit)
 
 
 @router.post("/", response_model=schemas.EnergySource,

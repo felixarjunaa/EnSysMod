@@ -1,4 +1,4 @@
-from fastapi import FastAPI, status, Request
+from fastapi import FastAPI, status, Request, Form
 from fastapi.responses import JSONResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -35,3 +35,18 @@ async def exception_handler(request: Request, exc: Exception):
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+
+@app.post("/webapp", response_class=HTMLResponse)
+async def webapp(request: Request):
+    return templates.TemplateResponse("webapp.html", {"request": request})
+
+
+@app.get("/signup", response_class=HTMLResponse)
+def signup(request: Request):
+    return templates.TemplateResponse("signup.html", {"request": request})
+
+
+@app.post("/signup", response_class=HTMLResponse)
+def signup(request: Request):
+    return templates.TemplateResponse("signup.html", {"request": request})
